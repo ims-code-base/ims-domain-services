@@ -1,5 +1,7 @@
 package com.ims.domain.school.mgmt.resources;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,6 +16,8 @@ import com.ims.domain.school.mgmt.service.EducationBoardService;
 @RequestMapping(value = {"/education-boards"})
 public class EducationBoardResource {
 
+	private final static Logger LOGGER = LoggerFactory.getLogger(EducationBoardResource.class);
+	
 	@Autowired
 	private EducationBoardService educationBoardService;
 
@@ -22,6 +26,7 @@ public class EducationBoardResource {
 			@RequestBody EducationBoardRepresentation educationBoardRepresentation) {
 		educationBoardService
 				.createEducationBoard(educationBoardRepresentation);
+		LOGGER.debug(educationBoardRepresentation.toString());
 	}
 
 }

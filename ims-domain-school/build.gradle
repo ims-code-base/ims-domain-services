@@ -1,0 +1,5 @@
+description = "ims-domain-school"
+
+dependencies {
+        compile project(":ims-domain-shared")
+}

@@ -1,0 +1,48 @@
+description = "ims-domain-services"
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.2.RELEASE")
+    }
+}
+
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+	compile project(":ims-domain-shared")
+	compile project(":ims-domain-school")
+}
+
+allprojects {
+ 	group = 'com.ims.domain.services'
+ 	version =  '0.1.0'
+ 	
+ 	apply plugin: 'java'
+	apply plugin: 'eclipse'
+	
+	sourceCompatibility = 1.8
+	targetCompatibility = 1.8
+	
+	repositories {
+		mavenCentral()
+		mavenLocal()
+	}
+	
+	dependencies
+	{
+		compile group: 'joda-time', name: 'joda-time', version: '2.3'
+		compile group: 'org.projectlombok', name: 'lombok', version: '1.16.10'
+		compile("org.springframework.boot:spring-boot-starter-web:1.4.2.RELEASE") 
+		compile 'org.springframework:spring-webmvc:4.2.3.RELEASE' 
+		compile 'org.springframework.boot:spring-boot-starter-actuator:1.4.2.RELEASE'	
+    	compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb', version: '1.4.2.RELEASE'
+    	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'
+	}
+}
+
+task wrapper(type: Wrapper, group : 'Build Setup') {
+	gradleVersion = '3.0'
+}

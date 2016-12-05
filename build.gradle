@@ -1,20 +1,6 @@
 description = "ims-domain-services"
 
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.2.RELEASE")
-    }
-}
 
-apply plugin: 'org.springframework.boot'
-
-dependencies {
-	compile project(":ims-domain-shared")
-	compile project(":ims-domain-school")
-}
 
 allprojects {
  	group = 'com.ims.domain.services'

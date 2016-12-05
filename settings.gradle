@@ -1,3 +1,4 @@
 rootProject.name = "ims-domain-services"
 include "ims-domain-shared"
 include "ims-domain-school"
+include "ims-domain-app"

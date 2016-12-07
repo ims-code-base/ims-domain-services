@@ -1,7 +1,5 @@
 description = "ims-domain-services"
 
-
-
 allprojects {
  	group = 'com.ims.domain.services'
  	version =  '0.1.1'

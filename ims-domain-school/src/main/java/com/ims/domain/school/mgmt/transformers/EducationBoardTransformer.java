@@ -8,11 +8,12 @@ import com.ims.domain.shared.model.EducationBoard;
 @Component
 public class EducationBoardTransformer {
 
-	public EducationBoard fromRepresentation(EducationBoardRepresentation educationBoardRepresentation) {
+	public EducationBoard fromRepresentation(EducationBoardRepresentation educationBoardRepresentation, String userId) {
 		EducationBoard educationBoard = new EducationBoard();
 		educationBoard.setQualifiedName(educationBoardRepresentation.getQualifiedName());
 		educationBoard.setKnownAsName(educationBoardRepresentation.getKnownAsName());
+		educationBoard.setUserId(userId);
 		return educationBoard;
 	}
-	
+
 }

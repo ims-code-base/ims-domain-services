@@ -15,14 +15,14 @@ public class DefaultEducationBoardService implements EducationBoardService {
 
 	@Autowired
 	private EducationBoardRepository educationBoardRepository;
-	
+
 	@Autowired
 	private EducationBoardTransformer educationBoardTransformer;
-	
+
 	@Override
-	public void createEducationBoard(
-			EducationBoardRepresentation educationBoardRepresentation) {
-		educationBoardRepository.save(educationBoardTransformer.fromRepresentation(educationBoardRepresentation));
+	public void createEducationBoard(EducationBoardRepresentation educationBoardRepresentation, String userId) {
+		educationBoardRepository
+				.save(educationBoardTransformer.fromRepresentation(educationBoardRepresentation, userId));
 	}
 
 	@Override
